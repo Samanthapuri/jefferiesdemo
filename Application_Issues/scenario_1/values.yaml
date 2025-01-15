@@ -1,5 +1,3 @@
-
-
 replicaCount: 1
 
 image:
@@ -22,8 +20,3 @@ service:
 
 deployment:
   port: 8000
-
-ingress:
-  class: alb
-  # must update hostname. Pick any name in the domain vijays.controller.gorafay.net
-  host: xxxxxxxx.vijays.controller.gorafay.net

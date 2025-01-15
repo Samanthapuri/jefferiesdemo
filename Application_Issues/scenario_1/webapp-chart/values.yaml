@@ -1,14 +1,16 @@
+
+
 replicaCount: 1
 
 image:
-  repository: samanthapuri/apache_custom:v1 
+  repository: amagdi888/my-repo:hello-app
 
 labels:
   app: web-app
   type: frontend
 
 serviceAccount:
-  enabled: true
+  enabled: false
   name: demo-sa
 
 service:
@@ -20,3 +22,7 @@ service:
 
 deployment:
   port: 8000
+
+ingress:
+  class: alb
+  host: testwebapp.vijays.controller.gorafay.net

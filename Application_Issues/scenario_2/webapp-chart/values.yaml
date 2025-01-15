@@ -1,3 +1,5 @@
+
+
 replicaCount: 1
 
 image:
@@ -20,3 +22,7 @@ service:
 
 deployment:
   port: 8000
+
+ingress:
+  class: alb
+  host: testwebapp.vijays.controller.gorafay.net
