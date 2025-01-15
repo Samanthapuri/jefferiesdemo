@@ -1,0 +1,29 @@
+
+
+replicaCount: 1
+
+image:
+  repository: amagdi888/my-repo:hello-app
+
+labels:
+  app: web-app
+  type: frontend
+
+serviceAccount:
+  enabled: false
+  name: demo-sa
+
+service:
+  protocol: TCP
+  type: ClusterIP 
+  port: 8000
+  labels:
+    name: webapp-service
+
+deployment:
+  port: 8000
+
+ingress:
+  class: alb
+  # must update hostname. Pick any name in the domain vijays.controller.gorafay.net
+  host: xxxxxxxx.vijays.controller.gorafay.net
