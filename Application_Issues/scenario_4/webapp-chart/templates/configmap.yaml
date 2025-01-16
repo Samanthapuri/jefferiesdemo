@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  index.html: |
+    <html>
+    <body>
+    <table><tr><th><h1>Hi </h1></th> <th><h1 style="color:DarkTurquoise;"> {{ .Values.User.name }},</h1></th></tr></table>
+    <h2> Welcome to Rafay kubernets troubleshooting session!! </h2>
+    <h2> You have successfulky deployed your sample web application!! </h2>  
+    </body>
+    </html>
+kind: ConfigMap
+metadata:
+  name: index-cm

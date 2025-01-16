@@ -12,5 +12,5 @@ spec:
       protocol: {{ .protocol}}
 {{- end }}
   selector: 
-    {{- include "webapp-chart.service.labels" . | indent 4 -}}
+    {{- include "webapp-chart.labels" . | indent 4 -}}
     

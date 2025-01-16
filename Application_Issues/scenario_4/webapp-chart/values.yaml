@@ -1,14 +1,14 @@
-
+User:
+  name: Vijay
 
 replicaCount: 1
 
 image:
-  repository: amagdi888/my-repo:hello-app 
+  repository: nginx:latest 
 
-pod:
-  labels:
-    app: web-app
-    type: frontend
+labels:
+  app: web-app
+  type: frontend
 
 serviceAccount:
   enabled: true
@@ -17,13 +17,10 @@ serviceAccount:
 service:
   protocol: TCP
   type: ClusterIP 
-  port: 8000
+  port: 80
   labels:
     app: web-app
-    type: frontend    
-deployment:
-  port: 8000
+    type: frontedn
 
-ingress:
-  class: alb
-  host: testwebapp.vijays.controller.gorafay.net
+deployment:
+  port: 80

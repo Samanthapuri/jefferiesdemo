@@ -1,5 +1,5 @@
-{{- define "webapp-chart.pod.labels" }}
-{{- range $key, $value := .Values.pod.labels}}
+{{- define "webapp-chart.labels" }}
+{{- range $key, $value := .Values.labels}}
 {{ $key }}: {{ $value }}
 {{- end }}
 {{- end }}

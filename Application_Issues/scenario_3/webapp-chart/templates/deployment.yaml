@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name}}-deployment
   labels:
-    {{- include "webapp-chart.pod.labels" . | indent 4 }}
+    {{- include "webapp-chart.labels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicaCount}}
   selector:
     matchLabels:
-      {{- include "webapp-chart.pod.labels" . | indent 6 }}
+      {{- include "webapp-chart.labels" . | indent 6 }}
   template:
     metadata:
       labels:
-        {{- include "webapp-chart.pod.labels" . | indent 8 }}
+        {{- include "webapp-chart.labels" . | indent 8 }}
     spec:
       serviceAccountName: {{ .Values.serviceAccount.name }}
       containers:
@@ -20,3 +20,10 @@ spec:
         image: {{ .Values.image.repository}}
         ports:
         - containerPort: {{ .Values.deployment.port}}
+        volumeMounts:
+          - name: index-cm
+            mountPath: /usr/share/nginx/html
+      volumes:
+      - name: index-cm
+        configMap:
+          name: index-cm

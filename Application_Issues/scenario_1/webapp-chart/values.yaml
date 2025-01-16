@@ -1,28 +1,25 @@
-
+User:
+  name: Vijay
 
 replicaCount: 1
 
 image:
-  repository: amagdi888/my-repo:hello-app
+  repository: nginx:latest 
 
 labels:
   app: web-app
   type: frontend
 
 serviceAccount:
-  enabled: false
+  enabled: true
   name: demo-sa
 
 service:
   protocol: TCP
   type: ClusterIP 
-  port: 8000
+  port: 80
   labels:
     name: webapp-service
 
 deployment:
-  port: 8000
-
-ingress:
-  class: alb
-  host: testwebapp.vijays.controller.gorafay.net
+  port: 80
