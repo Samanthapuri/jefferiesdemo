@@ -21,10 +21,5 @@ spec:
         ports:
         - containerPort: {{ .Values.deployment.port}}
         command:
-        - /bin/sh
-        - -c
-        - sleep 
-        - "5"
-        - ;
-        - exit
-        - "1"
+        - sleep
+        - "600"
