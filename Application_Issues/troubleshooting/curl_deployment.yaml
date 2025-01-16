@@ -16,3 +16,6 @@ spec:
       - image: curlimages/curl:latest 
         imagePullPolicy: IfNotPresent
         name: curl
+        command:
+        - sleep
+        - "6000"
